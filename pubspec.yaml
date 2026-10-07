@@ -1,0 +1,33 @@
+name: device_performance_monitor
+description: >
+  Fail-safe CPU, RAM, and temperature metrics for Flutter players.
+  Always returns the same three string fields; failures become N/A without throwing.
+version: 0.1.0
+homepage: https://github.com/mahmoud0saad/device_performance_monitor
+repository: https://github.com/mahmoud0saad/device_performance_monitor
+issue_tracker: https://github.com/mahmoud0saad/device_performance_monitor/issues
+
+environment:
+  sdk: ^3.7.2
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: dev.deviceperformance.device_performance_monitor
+        pluginClass: DevicePerformanceMonitorPlugin
+      linux:
+        pluginClass: DevicePerformanceMonitorPlugin
+      windows:
+        pluginClass: DevicePerformanceMonitorPluginCApi
